@@ -1,0 +1,82 @@
+[
+  {
+    "festival": "Makar Sankranti",
+    "region": "Karnataka",
+    "high_demand_categories": ["Homemade Food", "Organic Products", "Handicrafts"],
+    "multiplier": 1.12,
+    "start_date": "2026-01-10",
+    "end_date": "2026-01-16"
+  },
+  {
+    "festival": "Ugadi",
+    "region": "Karnataka",
+    "high_demand_categories": ["Pickles", "Homemade Food", "Handloom"],
+    "multiplier": 1.18,
+    "start_date": "2026-03-15",
+    "end_date": "2026-03-22"
+  },
+  {
+    "festival": "Ramzan Eid",
+    "region": "India",
+    "high_demand_categories": ["Homemade Food", "Jewellery", "Handloom"],
+    "multiplier": 1.16,
+    "start_date": "2026-03-18",
+    "end_date": "2026-03-23"
+  },
+  {
+    "festival": "Akshaya Tritiya",
+    "region": "India",
+    "high_demand_categories": ["Jewellery", "Handloom", "Handicrafts"],
+    "multiplier": 1.14,
+    "start_date": "2026-04-15",
+    "end_date": "2026-04-21"
+  },
+  {
+    "festival": "Varamahalakshmi",
+    "region": "Karnataka",
+    "high_demand_categories": ["Handloom", "Jewellery", "Homemade Food"],
+    "multiplier": 1.2,
+    "start_date": "2026-08-21",
+    "end_date": "2026-08-28"
+  },
+  {
+    "festival": "Onam",
+    "region": "South India",
+    "high_demand_categories": ["Handloom", "Homemade Food", "Spices"],
+    "multiplier": 1.15,
+    "start_date": "2026-08-23",
+    "end_date": "2026-09-02"
+  },
+  {
+    "festival": "Navratri",
+    "region": "India",
+    "high_demand_categories": ["Handicrafts", "Jewellery", "Handloom"],
+    "multiplier": 1.17,
+    "start_date": "2026-10-08",
+    "end_date": "2026-10-17"
+  },
+  {
+    "festival": "Dussehra",
+    "region": "Karnataka",
+    "high_demand_categories": ["Handicrafts", "Bamboo Products", "Homemade Food"],
+    "multiplier": 1.22,
+    "start_date": "2026-10-16",
+    "end_date": "2026-10-23"
+  },
+  {
+    "festival": "Diwali",
+    "region": "India",
+    "high_demand_categories": ["Handicrafts", "Homemade Food", "Skincare Products", "Jewellery"],
+    "multiplier": 1.25,
+    "start_date": "2026-11-03",
+    "end_date": "2026-11-12"
+  },
+  {
+    "festival": "Christmas",
+    "region": "India",
+    "high_demand_categories": ["Handicrafts", "Homemade Food", "Skincare Products"],
+    "multiplier": 1.1,
+    "start_date": "2026-12-20",
+    "end_date": "2026-12-27"
+  }
+]

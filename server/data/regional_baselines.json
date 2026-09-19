@@ -1,0 +1,10 @@
+[
+  { "city": "Mangalore", "demand_multiplier": 1.2 },
+  { "city": "Mysore", "demand_multiplier": 0.9 },
+  { "city": "Bengaluru", "demand_multiplier": 1.15 },
+  { "city": "Udupi", "demand_multiplier": 1.1 },
+  { "city": "Hubballi", "demand_multiplier": 1.0 },
+  { "city": "Belagavi", "demand_multiplier": 0.95 },
+  { "city": "Dharwad", "demand_multiplier": 1.05 },
+  { "city": "Shivamogga", "demand_multiplier": 0.98 }
+]
