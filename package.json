@@ -1,0 +1,22 @@
+{
+  "name": "shemarket",
+  "version": "1.0.0",
+  "description": "SheMarket - AI-powered marketplace for rural women entrepreneurs in India.",
+  "private": true,
+  "scripts": {
+    "dev": "npm --prefix server run dev",
+    "start": "npm --prefix server start",
+    "install:server": "npm --prefix server install",
+    "ai": "cd server/ai_ml && python run_local_api.py",
+    "ai:train": "cd server/ai_ml && python generate_datasets.py && python train_price_model.py"
+  },
+  "keywords": [
+    "marketplace",
+    "women-entrepreneurs",
+    "shg",
+    "express",
+    "mysql"
+  ],
+  "author": "SheMarket Hackathon Team",
+  "license": "MIT"
+}
