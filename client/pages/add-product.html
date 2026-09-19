@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Product | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/seller.js?v=voice-fallback-fix-20260508"></script>
+</head>
+<body data-page="seller-add-product">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="marketplace">Marketplace</a>
+      <button data-logout type="button" data-i18n="logout">Logout</button>
+      <select class="language-select" data-language-select aria-label="Language"></select>
+    </nav>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="/pages/seller-dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a>
+        <a href="/pages/add-product.html"><i data-lucide="plus-circle"></i> Add Product</a>
+        <a href="/pages/seller-products.html"><i data-lucide="package"></i> Products</a>
+        <a href="/pages/seller-orders.html"><i data-lucide="shopping-bag"></i> Orders</a>
+        <a href="/pages/seller-analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a>
+        <a href="/pages/profile.html"><i data-lucide="user"></i> Profile</a>
+      </nav>
+    </aside>
+    <main class="app-main">
+      <div class="page-title">
+        <div>
+          <h1>Add Product</h1>
+          <p>Create a listing with product story, cost details, and selling price.</p>
+        </div>
+      </div>
+      <form id="add-product-form" class="panel form-stack">
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="name">Product name <span class="ai-badge">🤖 AI Powered</span></label>
+            <div class="input-with-button">
+              <input id="name" name="name" type="text" placeholder="Handmade coconut soap" required>
+              <button id="voice-name-button" class="btn btn-icon btn-primary" type="button" title="Voice input"><i data-lucide="mic"></i></button>
+            </div>
+            <div id="voice-status" class="voice-status hide" aria-live="polite">
+              <span class="voice-dot"></span>
+              <span data-voice-status-text>Listening... speak now</span>
+              <button class="link-button" type="button" data-voice-retry>Try again</button>
+              <span data-voice-blocked class="hide" style="font-size:0.85em;color:#C15A2B;">
+                To fix: click the 🔒 icon in your browser address bar → Allow microphone → Refresh this page.
+              </span>
+            </div>
+            <div id="voice-fallback" class="voice-fallback hide" aria-live="polite">
+              <label for="voice-fallback-input">Voice capture is not supported. Type the spoken product details.</label>
+              <div class="voice-fallback-row">
+                <input id="voice-fallback-input" type="text" placeholder="Handmade coconut soap" autocomplete="off">
+                <button class="btn btn-primary btn-small" type="button" data-voice-fallback-submit>Use text</button>
+                <button class="btn btn-outline btn-small" type="button" data-voice-fallback-cancel>Cancel</button>
+              </div>
+            </div>
+          </div>
+          <div class="field">
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+              <option value="Handicrafts">Handicrafts</option>
+              <option value="Pickles">Pickles</option>
+              <option value="Homemade Food">Homemade Food</option>
+              <option value="Handloom">Handloom</option>
+              <option value="Jewellery">Jewellery</option>
+              <option value="Tailoring Items">Tailoring Items</option>
+              <option value="Organic Products">Organic Products</option>
+              <option value="Bamboo Products">Bamboo Products</option>
+              <option value="Spices">Spices</option>
+              <option value="Skincare Products">Skincare Products</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="description">Description <span class="ai-badge">🤖 AI Powered</span></label>
+          <textarea id="description" name="description" placeholder="Describe materials, process, and story." required></textarea>
+          <button id="generate-description-button" class="btn btn-outline" type="button"><i data-lucide="sparkles"></i>Generate Description</button>
+        </div>
+        <div class="grid grid-3">
+          <div class="field">
+            <label for="raw_material_cost">Raw material cost</label>
+            <input id="raw_material_cost" name="raw_material_cost" type="number" min="0" value="0">
+          </div>
+          <div class="field">
+            <label for="labour_cost">Labour cost</label>
+            <input id="labour_cost" name="labour_cost" type="number" min="0" value="0">
+          </div>
+          <div class="field">
+            <label for="packaging_cost">Packaging cost</label>
+            <input id="packaging_cost" name="packaging_cost" type="number" min="0" value="0">
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="price">Selling price <span class="ai-badge">🤖 AI Powered</span></label>
+            <div class="input-with-button">
+              <input id="price" name="price" type="number" min="0" required>
+              <button id="suggest-price-button" class="btn btn-terracotta" type="button"><i data-lucide="badge-indian-rupee"></i>Suggest</button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="recommended_price">Recommended price</label>
+            <input id="recommended_price" name="recommended_price" type="number" min="0" readonly>
+          </div>
+        </div>
+        <div class="grid grid-2">
+          <div class="field">
+            <label for="tags">Tags</label>
+            <input id="tags" name="tags" type="text" placeholder="organic, handmade, soap">
+          </div>
+          <div class="field">
+            <label for="seo_keywords">SEO keywords</label>
+            <input id="seo_keywords" name="seo_keywords" type="text" placeholder="AI keywords for search engines" readonly>
+          </div>
+        </div>
+        <div class="field">
+          <label for="image">Image upload</label>
+          <input id="image" name="image" type="file" accept="image/*" capture="environment">
+          <div class="inline-actions" style="margin-top: 0.75rem;">
+            <button id="take-photo-button" class="btn btn-outline" type="button"><i data-lucide="camera"></i>Take Photo</button>
+            <span id="photo-ai-status" class="muted" aria-live="polite"></span>
+          </div>
+          <img id="captured-photo-preview" class="hide" alt="Captured product preview" style="width:160px;max-width:100%;margin-top:0.75rem;border-radius:14px;box-shadow:var(--soft-shadow);">
+        </div>
+        <button class="btn btn-primary" type="submit"><i data-lucide="save"></i>Save Product</button>
+      </form>
+    </main>
+  </div>
+  <div id="camera-modal" class="payment-modal hide" role="dialog" aria-modal="true" aria-labelledby="camera-title">
+    <div class="payment-sheet" style="width:min(620px,100%);">
+      <button class="modal-close" type="button" data-camera-cancel aria-label="Close">x</button>
+      <h2 id="camera-title">Take Product Photo</h2>
+      <p class="muted" data-camera-status>Allow camera access to take a clear product photo.</p>
+      <video id="camera-video" autoplay playsinline muted style="width:100%;border-radius:14px;background:#1f1208;"></video>
+      <canvas id="camera-canvas" class="hide"></canvas>
+      <img id="camera-preview" class="hide" alt="Captured product photo" style="width:100%;border-radius:14px;">
+      <div class="inline-actions">
+        <button id="camera-capture" class="btn btn-primary" type="button"><i data-lucide="camera"></i>Capture</button>
+        <button id="camera-retake" class="btn btn-outline hide" type="button"><i data-lucide="rotate-ccw"></i>Retake</button>
+        <button id="camera-use" class="btn btn-terracotta hide" type="button"><i data-lucide="check"></i>Use Photo</button>
+        <button class="btn btn-outline" type="button" data-camera-cancel>Cancel</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

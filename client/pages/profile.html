@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/seller.js"></script>
+</head>
+<body data-page="profile">
+  <header class="topbar"><a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a><nav class="nav-links"><a href="/index.html" data-i18n="marketplace">Marketplace</a><button data-logout type="button" data-i18n="logout">Logout</button><select class="language-select" data-language-select aria-label="Language"></select></nav></header>
+  <div class="app-layout">
+    <aside class="sidebar"><nav><a href="/pages/seller-dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a><a href="/pages/add-product.html"><i data-lucide="plus-circle"></i> Add Product</a><a href="/pages/seller-products.html"><i data-lucide="package"></i> Products</a><a href="/pages/seller-orders.html"><i data-lucide="shopping-bag"></i> Orders</a><a href="/pages/seller-analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a><a href="/pages/profile.html"><i data-lucide="user"></i> Profile</a></nav></aside>
+    <main class="app-main">
+      <div class="page-title"><div><h1 data-i18n="profile">Profile</h1><p>Your account details.</p></div></div>
+      <section class="profile-card panel">
+        <div class="profile-hero">
+          <div class="profile-avatar" id="profile-avatar">S</div>
+          <div>
+            <p class="muted">SheMarket account</p>
+            <h2 id="profile-name">-</h2>
+            <span class="status" id="profile-approval">-</span>
+          </div>
+        </div>
+        <div class="profile-grid">
+          <div><span class="muted" data-i18n="email">Email</span><strong id="profile-email">-</strong></div>
+          <div><span class="muted" data-i18n="role">Role</span><strong id="profile-role">-</strong></div>
+          <div><span class="muted" data-i18n="language">Language</span><strong id="profile-language">-</strong></div>
+          <div><span class="muted">Rating</span><strong id="profile-rating">-</strong></div>
+        </div>
+      </section>
+      <form id="shop-location-form" class="panel form-stack" style="margin-top: 1rem;">
+        <div class="summary-row">
+          <h2>Shop Location</h2>
+          <button id="shop-location-mic" class="btn btn-outline btn-small" type="button"><i data-lucide="mic"></i>Speak Details</button>
+        </div>
+        <p id="shop-voice-status" class="muted" aria-live="polite"></p>
+        <div class="grid grid-2">
+          <div class="field"><label for="shopName">Shop name</label><input id="shopName" name="shopName" type="text"></div>
+          <div class="field"><label for="shopPhone">Shop phone</label><input id="shopPhone" name="shopPhone" type="tel"></div>
+        </div>
+        <div class="field"><label for="shopAddress">Shop address</label><textarea id="shopAddress" name="shopAddress" placeholder="Street, landmark, market area"></textarea></div>
+        <div class="grid grid-3">
+          <div class="field"><label for="shopCity">City</label><input id="shopCity" name="shopCity" type="text"></div>
+          <div class="field"><label for="shopState">State</label><input id="shopState" name="shopState" type="text"></div>
+          <div class="field"><label for="shopPIN">PIN</label><input id="shopPIN" name="shopPIN" type="text"></div>
+        </div>
+        <div class="grid grid-2">
+          <div class="field"><label for="shopHours">Shop hours</label><input id="shopHours" name="shopHours" type="text" placeholder="Mon-Sat, 10 AM - 6 PM"></div>
+          <div class="field"><label for="googleMapsLink">Google Maps link</label><input id="googleMapsLink" name="googleMapsLink" type="url"></div>
+        </div>
+        <button class="btn btn-primary" type="submit"><i data-lucide="save"></i>Save Shop Location</button>
+      </form>
+    </main>
+  </div>
+</body>
+</html>

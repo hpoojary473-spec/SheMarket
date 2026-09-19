@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/buyer.js"></script>
+</head>
+<body data-page="checkout">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/pages/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/pages/buyer-orders.html">Orders</a>
+      <button data-logout type="button">Logout</button>
+    </nav>
+  </header>
+  <main class="container page-section">
+    <div class="page-title">
+      <div>
+        <h1>Checkout</h1>
+        <p>Complete payment and place your order.</p>
+      </div>
+    </div>
+    <section class="panel" style="max-width: 720px;">
+      <h2>Order Summary</h2>
+      <div id="checkout-summary" style="margin-top: 1rem;"></div>
+      <button id="pay-button" class="btn btn-terracotta" type="button" style="margin-top: 1.25rem;"><i data-lucide="wallet"></i>Pay with Razorpay</button>
+    </section>
+  </main>
+  <div id="qr-payment-modal" class="payment-modal hide" role="dialog" aria-modal="true" aria-labelledby="qr-payment-title">
+    <div class="payment-sheet">
+      <button class="modal-close" type="button" data-close-qr aria-label="Close">x</button>
+      <div class="payment-state" data-payment-state>
+        <span class="payment-spinner"></span>
+        <span>Waiting for Payment</span>
+      </div>
+      <h2 id="qr-payment-title">Scan Razorpay QR</h2>
+      <p class="muted">Scan this demo QR to complete your SheMarket payment.</p>
+      <div id="qr-code" class="qr-code" aria-label="Generated QR code"></div>
+      <div class="payment-meta">
+        <div><span>Amount</span><strong id="qr-amount">-</strong></div>
+        <div><span>UPI ID</span><strong id="qr-upi">-</strong></div>
+        <div><span>Transaction ID</span><strong id="qr-transaction">-</strong></div>
+        <div><span>Time left</span><strong id="qr-countdown">02:00</strong></div>
+      </div>
+      <button id="confirm-qr-payment" class="btn btn-primary" type="button"><i data-lucide="refresh-cw"></i>Try again</button>
+    </div>
+  </div>
+</body>
+</html>

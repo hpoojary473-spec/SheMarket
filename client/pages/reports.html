@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reports | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/admin.js"></script>
+</head>
+<body data-page="reports">
+  <header class="topbar"><a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a><nav class="nav-links"><a href="/index.html">Marketplace</a><button data-logout type="button">Logout</button></nav></header>
+  <div class="app-layout">
+    <aside class="sidebar"><nav><a href="/pages/shg-dashboard.html"><i data-lucide="users"></i> SHG Dashboard</a><a href="/pages/seller-management.html"><i data-lucide="user-check"></i> Seller Management</a><a href="/pages/admin-orders.html"><i data-lucide="list-ordered"></i> All Orders</a><a href="/pages/reports.html"><i data-lucide="file-bar-chart"></i> Reports</a></nav></aside>
+    <main class="app-main">
+      <div class="page-title"><div><h1>Reports</h1><p>Admin charts for category mix and order health.</p></div></div>
+      <div class="grid grid-2">
+        <section class="panel"><h2>Products by Category</h2><canvas id="category-report-chart" style="height:280px;max-height:280px;"></canvas></section>
+        <section class="panel"><h2>Orders by Status</h2><canvas id="orders-report-chart" style="height:280px;max-height:280px;"></canvas></section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

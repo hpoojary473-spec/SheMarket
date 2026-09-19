@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Products | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/seller.js"></script>
+</head>
+<body data-page="seller-products">
+  <header class="topbar"><a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a><nav class="nav-links"><a href="/index.html" data-i18n="marketplace">Marketplace</a><button data-logout type="button" data-i18n="logout">Logout</button><select class="language-select" data-language-select aria-label="Language"></select></nav></header>
+  <div class="app-layout">
+    <aside class="sidebar"><nav><a href="/pages/seller-dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a><a href="/pages/add-product.html"><i data-lucide="plus-circle"></i> Add Product</a><a href="/pages/seller-products.html"><i data-lucide="package"></i> Products</a><a href="/pages/seller-orders.html"><i data-lucide="shopping-bag"></i> Orders</a><a href="/pages/seller-analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a><a href="/pages/profile.html"><i data-lucide="user"></i> Profile</a></nav></aside>
+    <main class="app-main">
+      <div class="page-title"><div><h1>Product Listings</h1><p>All products created by your seller account.</p></div><a class="btn btn-primary" href="/pages/add-product.html"><i data-lucide="plus"></i>Add Product</a></div>
+      <div id="seller-products-grid" class="grid grid-3"><div class="empty-state">Loading your products...</div></div>
+    </main>
+  </div>
+</body>
+</html>

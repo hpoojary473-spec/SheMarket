@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SHG Dashboard | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/admin.js"></script>
+</head>
+<body data-page="shg-dashboard">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html">Marketplace</a>
+      <button data-logout type="button">Logout</button>
+    </nav>
+  </header>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <nav>
+        <a href="/pages/shg-dashboard.html"><i data-lucide="users"></i> SHG Dashboard</a>
+        <a href="/pages/seller-management.html"><i data-lucide="user-check"></i> Seller Management</a>
+        <a href="/pages/admin-orders.html"><i data-lucide="list-ordered"></i> All Orders</a>
+        <a href="/pages/reports.html"><i data-lucide="file-bar-chart"></i> Reports</a>
+      </nav>
+    </aside>
+    <main class="app-main">
+      <div class="page-title">
+        <div>
+          <h1>SHG Dashboard</h1>
+          <p>Group products, member count, and revenue overview.</p>
+        </div>
+      </div>
+      <section class="stat-grid">
+        <article class="stat-card"><h3>Group Products</h3><div id="admin-products" class="value">0</div></article>
+        <article class="stat-card"><h3>Sellers</h3><div id="admin-sellers" class="value">0</div></article>
+        <article class="stat-card"><h3>Group Revenue</h3><div id="admin-revenue" class="value">₹0</div></article>
+      </section>
+      <section class="page-section">
+        <h2>SHG Groups</h2>
+        <div id="shg-groups" class="grid grid-3" style="margin-top: 1rem;"><div class="empty-state">Loading groups...</div></div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

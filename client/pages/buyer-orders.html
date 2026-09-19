@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Orders | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/buyer.js"></script>
+</head>
+<body data-page="buyer-orders">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/pages/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/pages/buyer-orders.html">Orders</a>
+      <button data-logout type="button">Logout</button>
+    </nav>
+  </header>
+  <main class="container page-section">
+    <div class="page-title">
+      <div>
+        <h1>Order History</h1>
+        <p>Track products bought from women-led sellers.</p>
+      </div>
+    </div>
+    <div id="order-notifications"></div>
+    <section class="panel table-wrap">
+      <table>
+        <thead><tr><th>Product</th><th>Qty</th><th>Total</th><th>Status</th><th>Date</th></tr></thead>
+        <tbody id="buyer-orders-body"><tr><td colspan="5">Loading orders...</td></tr></tbody>
+      </table>
+    </section>
+  </main>
+</body>
+</html>

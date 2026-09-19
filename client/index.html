@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SheMarket | Rural Women Marketplace</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/buyer.js"></script>
+</head>
+<body data-page="home">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="home">Home</a>
+      <a href="/pages/login.html" data-i18n="login">Login</a>
+      <select class="language-select" data-language-select aria-label="Language"></select>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="ai-badge">🤖 AI Powered Marketplace</span>
+        <h1>SheMarket</h1>
+        <p>Buy directly from rural women entrepreneurs, SHG members, and artisan groups across India. Handmade products, fair pricing, and simple digital selling tools in one place.</p>
+        <form id="search-form" class="toolbar">
+          <input class="search-input" name="search" type="search" placeholder="Search soaps, pickles, textiles, crafts">
+          <select id="search-mode" class="search-input" style="max-width: 170px;">
+            <option value="products">Products</option>
+            <option value="producers">Producers</option>
+          </select>
+          <select id="category-filter" class="search-input" style="max-width: 210px;">
+            <option value="">All categories</option>
+            <option value="Handicrafts">Handicrafts</option>
+            <option value="Pickles">Pickles</option>
+            <option value="Homemade Food">Homemade Food</option>
+            <option value="Handloom">Handloom</option>
+            <option value="Jewellery">Jewellery</option>
+            <option value="Tailoring Items">Tailoring Items</option>
+            <option value="Organic Products">Organic Products</option>
+            <option value="Bamboo Products">Bamboo Products</option>
+            <option value="Spices">Spices</option>
+            <option value="Skincare Products">Skincare Products</option>
+          </select>
+          <button class="btn btn-primary" type="submit"><i data-lucide="search"></i><span data-i18n="search">Search</span></button>
+        </form>
+        <div class="hero-actions">
+          <a class="btn btn-terracotta" href="#featured-products" data-i18n="shopProducts">Shop Products</a>
+          <a class="btn btn-outline" href="/pages/login.html" data-i18n="startSelling">Start Selling</a>
+        </div>
+      </div>
+      <div class="hero-market" aria-label="SheMarket craft showcase">
+        <div class="artisan-panel"></div>
+        <div class="craft-stack">
+          <div class="craft-tile"><strong>Fair prices</strong><span>Built for small batch sellers</span></div>
+          <div class="craft-tile"><strong>SHG ready</strong><span>Group products and revenue views</span></div>
+          <div class="craft-tile"><strong>AI helpers</strong><span>Voice input, descriptions, price suggestions</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section">
+      <div class="page-title">
+        <div>
+          <h1>Featured Products</h1>
+          <p>Fresh listings from women-led micro businesses.</p>
+        </div>
+      </div>
+      <div id="featured-products" class="grid grid-3">
+        <div class="empty-state">Loading products...</div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

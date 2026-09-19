@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reviews | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/buyer.js"></script>
+</head>
+<body data-page="reviews">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/pages/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/pages/buyer-orders.html">Orders</a>
+      <button data-logout type="button">Logout</button>
+    </nav>
+  </header>
+  <main class="container page-section">
+    <div class="page-title">
+      <div>
+        <h1>Reviews</h1>
+        <p id="review-product-title">Product feedback</p>
+      </div>
+    </div>
+    <div class="grid grid-2">
+      <form id="review-form" class="panel form-stack">
+        <h2>Leave a Review</h2>
+        <div class="field">
+          <label for="rating">Rating</label>
+          <select id="rating" name="rating" required>
+            <option value="5">5 - Excellent</option>
+            <option value="4">4 - Good</option>
+            <option value="3">3 - Average</option>
+            <option value="2">2 - Poor</option>
+            <option value="1">1 - Bad</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" placeholder="Share product quality, packaging, and delivery feedback."></textarea>
+        </div>
+        <button class="btn btn-primary" type="submit"><i data-lucide="star"></i>Save Review</button>
+      </form>
+      <section id="reviews-list" class="grid"><div class="empty-state">Loading reviews...</div></section>
+    </div>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const user = window.SheMarket?.getUser?.();
+      if (user && user.role === 'seller') {
+        document.querySelectorAll('a[href*="cart.html"], a[href*="buyer-orders.html"]')
+          .forEach((element) => {
+            element.style.display = 'none';
+          });
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Producer Profile | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/buyer.js"></script>
+</head>
+<body data-page="producer-profile">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="marketplace">Marketplace</a>
+      <a href="/pages/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/pages/login.html" data-i18n="login">Login</a>
+      <select class="language-select" data-language-select aria-label="Language"></select>
+    </nav>
+  </header>
+  <main class="container page-section">
+    <section id="producer-profile" class="panel">
+      <div class="empty-state">Loading producer profile...</div>
+    </section>
+    <section class="page-section">
+      <div class="page-title">
+        <div>
+          <h1>Products</h1>
+          <p>Listings from this producer.</p>
+        </div>
+      </div>
+      <div id="producer-products" class="grid grid-3"></div>
+    </section>
+  </main>
+</body>
+</html>

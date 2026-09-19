@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/auth.js"></script>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html" data-i18n="home">Home</a>
+      <a href="/pages/login.html" data-i18n="login">Login</a>
+      <select class="language-select" data-language-select aria-label="Language"></select>
+    </nav>
+  </header>
+
+  <main class="auth-shell">
+    <section class="auth-card">
+      <div class="auth-art">
+        <span class="ai-badge">🤖 AI Powered</span>
+        <h1 style="font-family: 'Playfair Display', serif; font-size: 3rem;">Sell with confidence.</h1>
+        <p>Seller registration defaults to SHG-ready marketplace access. Admin can approve sellers from the management dashboard.</p>
+      </div>
+      <div class="auth-form-wrap">
+        <div class="tabs" aria-label="Login or register">
+          <button class="tab active" type="button" data-auth-tab="login" data-i18n="login">Login</button>
+          <button class="tab" type="button" data-auth-tab="register" data-i18n="register">Register</button>
+        </div>
+
+        <form id="login-form" class="form-stack" style="margin-top: 1.25rem;">
+          <div>
+            <h1 data-i18n="welcomeBack">Welcome back</h1>
+            <p class="muted">Use your seller, buyer, or admin account.</p>
+          </div>
+          <div class="field">
+            <label for="login-email" data-i18n="email">Email</label>
+            <input id="login-email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="login-password" data-i18n="password">Password</label>
+            <div class="password-field">
+              <input id="login-password" name="password" type="password" required>
+              <button class="btn btn-icon btn-outline" type="button" data-password-toggle="#login-password" aria-label="Show password"><i data-lucide="eye"></i></button>
+            </div>
+          </div>
+          <button class="btn btn-primary" type="submit"><i data-lucide="log-in"></i>Login</button>
+        </form>
+
+        <form id="register-form" class="form-stack hide" style="margin-top: 1.25rem;">
+          <div>
+            <h1 data-i18n="createAccount">Create account</h1>
+            <p class="muted">Choose seller for rural entrepreneur onboarding.</p>
+          </div>
+          <div class="grid grid-2">
+            <div class="field">
+              <label for="register-name" data-i18n="name">Name</label>
+              <input id="register-name" name="name" type="text" required>
+            </div>
+            <div class="field">
+              <label for="register-language" data-i18n="language">Language</label>
+              <select id="register-language" name="language" data-language-select></select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="register-email" data-i18n="email">Email</label>
+            <input id="register-email" name="email" type="email" required>
+          </div>
+          <div class="field">
+            <label for="register-password" data-i18n="password">Password</label>
+            <div class="password-field">
+              <input id="register-password" name="password" type="password" minlength="6" required>
+              <button class="btn btn-icon btn-outline" type="button" data-password-toggle="#register-password" aria-label="Show password"><i data-lucide="eye"></i></button>
+            </div>
+          </div>
+          <div class="field">
+            <label for="register-role" data-i18n="role">Role</label>
+            <select id="register-role" name="role">
+              <option value="seller" selected>Seller</option>
+              <option value="buyer">Buyer</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          <button class="btn btn-terracotta" type="submit"><i data-lucide="user-plus"></i>Register</button>
+        </form>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

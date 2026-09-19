@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/buyer.js"></script>
+</head>
+<body data-page="cart">
+  <header class="topbar">
+    <a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a>
+    <nav class="nav-links">
+      <a href="/index.html">Home</a>
+      <a href="/pages/cart.html">Cart (<span data-cart-count>0</span>)</a>
+      <a href="/pages/buyer-orders.html">Orders</a>
+      <a href="/pages/login.html">Login</a>
+      <button data-logout type="button">Logout</button>
+    </nav>
+  </header>
+  <main class="container page-section">
+    <div class="page-title">
+      <div>
+        <h1>Cart</h1>
+        <p>Review items before payment.</p>
+      </div>
+      <a class="btn btn-primary" href="/pages/checkout.html"><i data-lucide="credit-card"></i>Checkout</a>
+    </div>
+    <section class="panel">
+      <div id="cart-list"></div>
+      <div class="summary-row" style="justify-content: space-between; margin-top: 1.25rem;">
+        <h2>Total</h2>
+        <h2 id="cart-total">₹0</h2>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

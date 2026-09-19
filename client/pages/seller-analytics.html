@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Seller Analytics | SheMarket</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script defer src="https://unpkg.com/lucide@latest"></script>
+  <script defer src="/assets/js/api.js"></script>
+  <script defer src="/assets/js/seller.js"></script>
+</head>
+<body data-page="seller-analytics">
+  <header class="topbar"><a class="brand" href="/index.html"><span class="brand-mark">S</span>SheMarket</a><nav class="nav-links"><a href="/index.html" data-i18n="marketplace">Marketplace</a><button data-logout type="button" data-i18n="logout">Logout</button><select class="language-select" data-language-select aria-label="Language"></select></nav></header>
+  <div class="app-layout">
+    <aside class="sidebar"><nav><a href="/pages/seller-dashboard.html"><i data-lucide="layout-dashboard"></i> Dashboard</a><a href="/pages/add-product.html"><i data-lucide="plus-circle"></i> Add Product</a><a href="/pages/seller-products.html"><i data-lucide="package"></i> Products</a><a href="/pages/seller-orders.html"><i data-lucide="shopping-bag"></i> Orders</a><a href="/pages/seller-analytics.html"><i data-lucide="bar-chart-3"></i> Analytics</a><a href="/pages/profile.html"><i data-lucide="user"></i> Profile</a></nav></aside>
+    <main class="app-main">
+      <div class="page-title"><div><h1>Analytics</h1><p>Track sales and product demand over time.</p></div></div>
+      <section class="analytics-summary grid grid-4" aria-label="Seller analytics summary">
+        <article class="stat-card">
+          <span>Total Revenue</span>
+          <strong id="analytics-revenue">₹0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Total Orders</span>
+          <strong id="analytics-orders">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Products Sold</span>
+          <strong id="analytics-sold">0</strong>
+        </article>
+        <article class="stat-card">
+          <span>Average Rating</span>
+          <strong id="analytics-rating">0.0</strong>
+        </article>
+      </section>
+      <div class="grid grid-2 analytics-grid">
+        <section class="panel chart-panel">
+          <div class="chart-heading">
+            <h2>Profit Trend</h2>
+            <span>Weekly profit in ₹</span>
+          </div>
+          <div class="chart-container" style="position:relative; height:280px; max-height:280px;">
+            <canvas id="sales-trend-chart" height="280"></canvas>
+          </div>
+        </section>
+        <section class="panel chart-panel">
+          <div class="chart-heading">
+            <h2>Top Products</h2>
+            <span>Revenue by listing</span>
+          </div>
+          <div class="chart-container" style="position:relative; height:280px; max-height:280px;">
+            <canvas id="top-products-chart" height="280"></canvas>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
